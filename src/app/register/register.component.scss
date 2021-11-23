@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+}
+
+.left {
+  width: 40%;
+  height: 100vh;
+  background: url('../../assets/bg.jpg');
+  background-size: cover; 
+}
+
+.form {
+  padding: 2rem 1rem;  
+  text-align: center;
+  color: var(--white);    
+  &__title {    
+    margin-bottom: 2rem;
+  }
+  &__text {
+    font-size: 1.5rem;    
+  }
+}
+
+.register {
+  padding: 0 4rem;
+  margin: auto 0;
+  &__title {
+    color: var(--primary-color);    
+  }
+
+  &__text {
+    margin: 1rem 0;
+    opacity: .5;
+    max-width: 600px;
+  }
+}
