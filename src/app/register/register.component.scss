@@ -24,6 +24,8 @@
 .register {
   padding: 0 4rem;
   margin: auto 0;
+  width: min(100%, 1200px);
+
   &__title {
     color: var(--primary-color);    
   }

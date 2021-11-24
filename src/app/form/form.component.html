@@ -1,0 +1,42 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" id="firstName" required ngModel #name="ngModel">
+    <span *ngIf="!name.valid && name.touched">First name is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" id="lastName" required ngModel #lastName="ngModel">
+    <span *ngIf="!lastName.valid && lastName.touched">Last name is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="number">Phone Number</label>
+    <input type="text" name="number" id="number" required ngModel #number="ngModel">
+    <span *ngIf="!number.valid && number.touched">Phone number is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" email required ngModel #email="ngModel">
+    <span *ngIf="!email.valid && email.touched">Email is not valid!</span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required ngModel minlength="8" #password="ngModel">
+    <span *ngIf="!password.valid && password.touched">Password must be at least 8 digits!</span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="password2">Confirm Password</label>
+    <input type="password" name="password2" id="password2" required ngModel minlength="8" #password2="ngModel">
+    <span *ngIf="password2.value != password.value && password.touched">Password must match!</span>
+
+  </div>
+
+  <button class="form-submit" type="submit" [disabled]="password.value == password2.value && !form.valid">Create Account</button>
+</form>
